@@ -38,10 +38,10 @@ public class HttpResponse {
 		
 		if (this.body != null) {
 			IOUtil.println(out, "");
-			IOUtil.print(out, this.body);
+			IOUtil.println(out, this.body);
 		} else if (this.bodyFile != null) {
 			IOUtil.println(out, "");
-			Files.copy(this.bodyFile, out);
+			Files.copy(this.bodyFile, out); // Copies all bytes from a file to an output stream.
 		}
 	}
 	

@@ -27,8 +27,10 @@ public enum ContentType {
         // ★拡張子ごとに ContentType のインスタンスを保存しておく
         Stream.of(ContentType.values())
               .forEach(contentType -> {
-                  contentType.extensions.forEach(extension -> {
-                      EXTENSION_CONTENT_TYPE_MAP.put(extension.toUpperCase(), contentType);
+            	  	 	System.out.println("【content type】" + contentType);
+            	  	 	contentType.extensions.forEach(extension -> {
+                	  		System.out.println("【extension】" + extension);
+                	  		EXTENSION_CONTENT_TYPE_MAP.put(extension.toUpperCase(), contentType);
                   });
               });
     }
@@ -37,6 +39,7 @@ public enum ContentType {
     private final Set<String> extensions = new HashSet<>();
 
     private ContentType(String text, String extensions) {
+    		System.out.println("【今呼ばれた！】");
         this.text = text;
         this.extensions.addAll(Arrays.asList(extensions.split(",")));
     }
